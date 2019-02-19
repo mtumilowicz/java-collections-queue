@@ -5,14 +5,22 @@
 * `interface Queue<E> extends Collection<E>`
 * methods
     * inserting
+        * returns `true` if the element was added to this queue, else `false`
         * `boolean add(E e)`
+            * `IllegalStateException` if the element cannot be added at this time due to capacity restrictions
         * `boolean offer(E e)`
     * removing
+        * returns the head of this queue
         * `E remove()`
+            * `NoSuchElementException` if this queue is empty
         * `E poll()`
+            * returns `null` if this queue is empty
     * examining
+        * returns the head of this queue
         * `E element()`
+            * `NoSuchElementException` if this queue is empty
         * `E peek()`
+            * returns `null` if this queue is empty
 * for every action we have two methods, because they deal
 with extreme cases differently
 * what can be extreme cases? for example examining element
